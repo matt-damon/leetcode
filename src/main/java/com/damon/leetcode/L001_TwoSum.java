@@ -3,7 +3,7 @@ package com.damon.leetcode;
 import java.util.HashMap;
 import java.util.Map;
 
-public class TwoSum {
+public class L001_TwoSum {
 
     //one-pass hashtable
     public int[] twoSum(int[] nums, int target) {
