@@ -9,7 +9,7 @@ class ListNode {
     ListNode(int val, ListNode next) {this.val = val; this.next = next;}
 }
 
-public class AddTwoNumbers {
+public class L002_AddTwoNumbers {
 
     /**
      * 链表类小技巧，dummyNode，僵尸节点
