@@ -71,22 +71,18 @@ public class L005_LongestPalindromicSubstring {
         if (s == null || s.length() < 2) {
             return s;
         }
-
+        int maxLen = 1;
+        int start = 0;
         for (int i = 0; i < s.length(); i++) {
+            int len1 = expand(s, i, i);
+            int len2 = expand(s, i, i +1);
 
+            int len  = Math.max(len1, len2);
 
-
-
-
-
-
-
-
+            start = len > maxLen ? i - (len - 1) / 2 : start;
+            maxLen = Math.max(maxLen, len);
         }
-
-
-
-
+        return s.substring(start, start + maxLen);
     }
 
 
