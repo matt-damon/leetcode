@@ -6,23 +6,21 @@ package com.damon.leetcode;
  * -123 -> -321
  * 120 -> 21
  * 需考虑溢出的情况
+ *
+ *    rev * 10 + mod <= 2147483647(Integer.MAX_VALUE)
+ *
  */
 public class L006_ReverseInteger {
 
-
     public static int reverse(int x) {
         int rev = 0;
-        int div = x;
-        while (div != 0) {
-            int mod = div % 10;
-            int tmp = rev * 10 + mod;
-
-            if ((tmp - mod) / 10 != rev) {
+        while (x != 0) {
+            if (rev > Integer.MAX_VALUE / 10 || rev < Integer.MIN_VALUE / 10) {
                 return 0;
             }
-
-            div = div / 10;
-            rev = tmp;
+            int mod = x % 10;
+            rev = rev * 10 + mod;//部分语言溢出会报错,java不会
+            x = x / 10;
         }
         return rev;
     }
